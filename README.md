@@ -1,6 +1,6 @@
 # FlowerClassification-Recommendation
 ## Tasks in this project: 
-To correctly classify unseen images as one of the eight types of flowers above. From an input flower image, recommend 10 more images of similar flowers (of the same type and must be visually as similar as possible).
+To correctly classify unseen images as one of the eight types of flowers above. From an input flower image, recommend 10 more images of similar flowers (of the same type and must be visually as similar as possible). Also, there will be one model for flower classification only and one for flower recommendation.
 
 ## About Dataset
 ### Dataset Description:
@@ -42,5 +42,20 @@ Our data is organized in the "/Dataset" directory:
 
 #### Machine Learning Models
 - **Deep Learning Models:** Building convolutional neural networks (CNN) using TensorFlow and Keras for image classification tasks.
-- **Model Evaluation:** I employ cross-validation, hyperparameter tuning, and other techniques to evaluate and improve the performance of my models.
+- **Model Evaluation:** I employ fine tuning for Adam optimizer as well as Early Stopping function in order to evaluate and improve the performance of my models.
 
+### Model Architecture
+
+|Flower Classification                           |Flower Recommendation                            |
+|------------------------------------------------|-------------------------------------------------|
+|![image](./assets/FlowerClassificationModel.png)| ![image](./assets/FlowerRecommendationModel.png)| 
+
+### Training
+The model is trained using the training dataset with the objective of minimizing a categorical cross-entropy loss function. During training, the model's weights are adjusted iteratively using the Adam optimizer.
+
+#### Training Parameters
+- Batch Size: 32
+- Image size: 224 x 224
+- Optimizer: Adam
+- Number of Epochs: 45
+- Learning Rate: 0.001
